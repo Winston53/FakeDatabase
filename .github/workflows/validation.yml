@@ -16,12 +16,7 @@ jobs:
 
       - name: Lint SQL (TSQLLint)
         shell: powershell
-        run: |
-          $files = Get-ChildItem -Path "FakeRetailDB" -Recurse -Filter "*.sql" | Select-Object -ExpandProperty FullName
-          if ($files) {
-            tsqllint $files
-          } else {
-            Write-Host "No SQL files found."
-          }      
+        run: tsqllint FakeRetailDB/
+        
       - name: Build .dacpac
         run: dotnet build FakeRetailDB/FakeRetailDB.sqlproj --configuration Release
