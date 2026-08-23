@@ -20,9 +20,9 @@ jobs:
 
       - name: Publish to SQL Server
         run: |
-          sqlpackage /Action:Publish \
-            /SourceFile:"FakeRetailDB/bin/Release/FakeRetailDB.dacpac" \
-            /TargetServerName:"Winston\SQLEXPRESS01" \
-            /TargetDatabaseName:"FakeRetailDB" \
+          sqlpackage /Action:Publish `
+            /SourceFile:"FakeRetailDB/bin/Release/FakeRetailDB.dacpac" `
+            /TargetServerName:"Winston\SQLEXPRESS01" `
+            /TargetDatabaseName:"FakeRetailDB" `
             /p:BlockOnPossibleDataLoss=false
 
