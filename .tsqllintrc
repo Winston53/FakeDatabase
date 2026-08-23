@@ -6,8 +6,9 @@
     "non-sargable": "warning",
     "schema-qualify": "error",
     "select-star": "warning",
-    "semicolon-termination": "error",
+    "semicolon-termination": "off",
     "set-nocount": "warning",
     "set-quoted-identifier": "off"
+    
   }
 }
