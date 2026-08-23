@@ -24,5 +24,6 @@ jobs:
             /SourceFile:"FakeRetailDB/bin/Release/FakeRetailDB.dacpac" `
             /TargetServerName:"Winston\SQLEXPRESS01" `
             /TargetDatabaseName:"FakeRetailDB" `
+            /TargetTrustServerCertificate:True `
             /p:BlockOnPossibleDataLoss=false
 
