@@ -1,0 +1,13 @@
+{
+  "rules": {
+    "conditional-begin-end": "error",
+    "data-type-length": "error",
+    "keyword-capitalization": "warning",
+    "non-sargable": "warning",
+    "schema-qualify": "error",
+    "select-star": "warning",
+    "semicolon-termination": "error",
+    "set-nocount": "warning",
+    "set-quoted-identifier": "error"
+  }
+}

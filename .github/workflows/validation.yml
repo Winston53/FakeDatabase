@@ -5,11 +5,23 @@ on:
     branches: [main]
     paths:
       - 'FakeRetailDB/**'
+  workflow_dispatch:
+    
 
 jobs:
   build:
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
+
+      - name: Lint SQL (TSQLLint)
+        shell: pwsh
+        run: |
+          $files = Get-ChildItem -Path "FakeRetailDB" -Recurse -Filter "*.sql" | Select-Object -ExpandProperty FullName
+          if ($files) {
+            tsqllint $files
+          } else {
+            Write-Host "No SQL files found."
+          }      
       - name: Build .dacpac
         run: dotnet build FakeRetailDB/FakeRetailDB.sqlproj --configuration Release
