@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build">
+  <Sdk Name="Microsoft.Build.Sql" Version="2.1" />
+  <PropertyGroup>
+    <Name>FakeRetailDB</Name>
+    <ProjectGuid>{DEAF715C-B0A8-4EFB-9700-FD3122211BCF}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql170DatabaseSchemaProvider</DSP>
+    <ModelCollation>1033, CI</ModelCollation>
+    <QueryStoreCaptureMode>Auto</QueryStoreCaptureMode>
+    <QueryStoreStaleQueryThreshold>30</QueryStoreStaleQueryThreshold>
+    <QueryStoreMaxStorageSize>1000</QueryStoreMaxStorageSize>
+    <TargetRecoveryTimePeriod>60</TargetRecoveryTimePeriod>
+    <PageVerify>CHECKSUM</PageVerify>
+    <ServiceBrokerOption>EnableBroker</ServiceBrokerOption>
+    <DefaultCollation>Chinese_Hong_Kong_Stroke_90_CI_AS</DefaultCollation>
+    <AnsiNullDefault>False</AnsiNullDefault>
+    <AnsiNulls>False</AnsiNulls>
+    <AnsiPadding>False</AnsiPadding>
+    <AnsiWarnings>False</AnsiWarnings>
+    <ArithAbort>False</ArithAbort>
+    <ConcatNullYieldsNull>False</ConcatNullYieldsNull>
+    <QuotedIdentifier>False</QuotedIdentifier>
+    <DefaultCursor>GLOBAL</DefaultCursor>
+    <AutoClose>True</AutoClose>
+    <Recovery>SIMPLE</Recovery>
+  </PropertyGroup>
+  <Target Name="BeforeBuild">
+    <Delete Files="$(BaseIntermediateOutputPath)\project.assets.json" />
+  </Target>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SqlServer.Dacpacs.Master" Version="170.*" />
+  </ItemGroup>
+</Project>
