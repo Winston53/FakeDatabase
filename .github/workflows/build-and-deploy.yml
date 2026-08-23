@@ -25,5 +25,6 @@ jobs:
             /TargetServerName:"Winston\SQLEXPRESS01" `
             /TargetDatabaseName:"FakeRetailDB" `
             /TargetTrustServerCertificate:True `
+            /p:DropObjectsNotInSource=true `
             /p:BlockOnPossibleDataLoss=false
 
