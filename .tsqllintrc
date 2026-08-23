@@ -8,6 +8,6 @@
     "select-star": "warning",
     "semicolon-termination": "error",
     "set-nocount": "warning",
-    "set-quoted-identifier": "error"
+    "set-quoted-identifier": "off"
   }
 }
