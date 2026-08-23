@@ -1,0 +1,17 @@
+name: test local SQL server connection
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-local-sql:
+    name: Connect and Read DB
+    runs-on: self-hosted
+    steps:
+      - name: Test SQL Server connection
+        run: |
+          sqlcmd -S "localhost\SQLEXPRESS01" -E -C -Q "SELECT @@VERSION AS SQL_Version" -b
+
+      - name: List all database
+        run: |
+          sqlcmd -S "localhost\SQLEXPRESS01" -E -C -Q "SELECT name FROM sys.databases ORDER BY name" -b
