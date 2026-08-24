@@ -1,0 +1,66 @@
+name: Bug Report
+description: Report a schema issue, deployment failure, or data problem
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Please fill out every section.
+
+  - type: dropdown
+    id: database
+    attributes:
+      label: Which database?
+      options:
+        - FakeRetailDB
+        - CustomerDB
+        - InventoryDB
+        - OrdersDB
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: deploy-method
+    attributes:
+      label: How was this deployed?
+      options:
+        - GitHub Actions
+        - Manual sqlpackage
+        - SSMS
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      placeholder: Describe the bug or failure...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Push branch...
+        2. Merge PR...
+        3. See error...
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error logs
+      description: Paste workflow logs or SSMS errors
+      render: shell
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I checked this is not a duplicate
+          required: true
