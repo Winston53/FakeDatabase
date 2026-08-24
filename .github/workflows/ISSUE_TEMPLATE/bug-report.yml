@@ -1,0 +1,74 @@
+name: Bug Report
+description: Report a schema issue, deployment failure, or data problem
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Please fill out every section so we can reproduce the issue.
+
+  - type: dropdown
+    id: database
+    attributes:
+      label: Which database?
+      options:
+        - FakeRetailDB
+        - CustomerDB
+        - InventoryDB
+        - OrdersDB
+        - Other (specify in description)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: deploy-method
+    attributes:
+      label: How was this deployed?
+      options:
+        - GitHub Actions (automatic)
+        - Manual sqlpackage
+        - SSMS manual script
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Describe the bug or failure.
+      placeholder: The deployment failed with error...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: List the exact steps.
+      placeholder: |
+        1. Push branch feature/xxx
+        2. Merge PR #123
+        3. Workflow fails at Publish step
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error logs / Screenshots
+      description: Paste the exact error message or workflow link.
+      render: shell
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have checked this is not a duplicate issue
+          required: true
+        - label: I can reproduce this consistently
+          required: false
